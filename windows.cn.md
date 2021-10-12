@@ -9,7 +9,20 @@
 - 安装Ruby
 
 
+## Zoom
 
+为了让我们能够线上的交流，我们将会使用[Zoom](https://zoom.us/)，一个视频会议工具。
+
+
+:warning: 如果你已经安装了Zoom，请确保它的版本至少是**5.6**。
+
+- 打开[https://zoom.us/download](https://zoom.us/download)
+- 在**Zoom会议客户端（Zoom Client）**下方点击**下载（Download）**按钮
+- 打开你刚刚下载的文件并安装应用程序
+
+![Zoom主页面](images/zoom_home_screen.png)
+
+你现在可以关闭Zoom程序了。
 
 ## GitHub账户
 
@@ -611,23 +624,23 @@ sudo apt install -y zsh curl vim imagemagick jq
 
 ## Oh-my-zsh
 
-Let's install the `zsh` plugin [Oh My Zsh](https://ohmyz.sh/).
+让我们一起安装`zsh`插件[Oh My Zsh](https://ohmyz.sh/).
 
-In a terminal execute the following command:
+在终端terminal里执行以下指令：
 
 ```bash
 sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 ```
 
-If asked "Do you want to change your default shell to zsh?", press `Y`
+如果终端里出现询问"Do you want to change your default shell to zsh?", 可以输入`Y`
 
-At the end your terminal should look like this:
+在你的终端的最后，你会看到以下内容:
 
 ![Ubuntu terminal with OhMyZsh](images/oh_my_zsh.png)
 
-:heavy_check_mark: If it does, you can continue :+1:
+:heavy_check_mark: 如果你的终端成功显示了上面，你就可以继续下一步了:+1:
 
-:x: Otherwise, please **ask for a teacher**
+:x: 如果安装失败的话，请询问**你的老师**
 
 
 ## 把你的默认浏览器链接到Ubuntu
@@ -877,6 +890,36 @@ plugins=(gitfast last-working-dir common-aliases sublime zsh-syntax-highlighting
 :heavy_check_mark: 按下`Ctrl` + `S` 保存`.zshrc`文件，然后关掉Visual Code Studio。
 
 
+## rbenv
+
+让我们安装[`rbenv`](https://github.com/sstephenson/rbenv)，一个帮助我们安装和管理`ruby`环境的软件。
+
+首先，我们需要清理你可能已经安装过的Ruby:
+
+```bash
+rvm implode && sudo rm -rf ~/.rvm
+# If you got "zsh: command not found: rvm", carry on.
+# It means `rvm` is not on your computer, that's what we want!
+rm -rf ~/.rbenv
+```
+
+然后在终端里运行:
+
+```bash
+sudo apt install -y build-essential tklib zlib1g-dev libssl-dev libffi-dev libxml2 libxml2-dev libxslt1-dev libreadline-dev
+```
+
+```bash
+git clone https://github.com/rbenv/rbenv.git ~/.rbenv
+```
+
+```bash
+git clone https://github.com/rbenv/ruby-build.git ~/.rbenv/plugins/ruby-build
+```
+
+**关闭你的终端并重新打开它**
+
+如果你收到了一个警告，就请先**忽略**它（Ruby还没有安装好）。
 
 
 现在，你已经准备好了去安装最新Ruby版本并把它设置为默认版本。
@@ -1075,6 +1118,28 @@ curl -Ls https://web-dev-challenge-lewagon-image.oss-cn-shanghai.aliyuncs.com/se
 ![](images/slack_mic_cam_all_green.png)
 
 
+### 设置Slack
+
+打开Slack应用程序并登入`lewagon-alumni`组织。
+
+确保你已经**上传了你的头像照片** :point_down:
+
+![如何上传一张头像照片](images/slack_profile_picture.gif)
+
+之后你可以全天开着Slack，这样你可以在上面分享有用的链接/寻求帮助/决定去那儿吃饭/...
+
+为了确保视频电话可以正常工作，让我们一起测试摄像头和麦克风：
+- 打开Slack应用程序
+- 在任意群组的消息编辑框里输入`/call --test`并按下`ENTER`
+- 按下"Start test"绿色按钮
+
+![在Slack检查麦克风和摄像头](images/slack_call_test.png)
+
+:heavy_check_mark: 当测试结束以后，你应该会看到你的摄像头和麦克风有绿色的"Succeed"信息。:+1:
+
+:x: 如果测试失败的话，**请联系你的老师**.
+
+你也可以在手机上安装Slack应用并登入`lewagon-alumni`!
 
 
 ## Ubuntu文件系统
@@ -1126,6 +1191,10 @@ curl -Ls https://web-dev-challenge-lewagon-image.oss-cn-shanghai.aliyuncs.com/se
 
 
 
-conclusion.md
+## 设置完成啦!
+
+现在你的电脑已经完成[Le Wagon网页开发课程](https://www.lewagon.com/web-development-course/full-time)的设置啦 :muscle: :clap:
+
+享受你的编程之旅，你会掌握它的！ :rocket:
 
 
